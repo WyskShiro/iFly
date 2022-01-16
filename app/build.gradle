@@ -16,6 +16,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField "String", "API_URL", '"https://s3-eu-west-1.amazonaws.com/"'
+        buildConfigField "String", "API_URL_LOGO", '"https://logos.skyscnr.com/images/airlines/small/"'
     }
 
     buildFeatures {
