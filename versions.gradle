@@ -21,7 +21,6 @@ ext.versions = [
         'lifecycle'        : '2.2.0',
         //M
         'material'         : '1.4.0',
-        'mockk'            : '1.12.0',
         //O
         'okhttp'           : '3.12.13',
         'okhttpInterceptor': '4.9.3',

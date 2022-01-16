@@ -4,7 +4,5 @@
 - Koin for DI
 - Retrofit for API calls
 - Jetpack Components
-- MockK for unit testing
-
 
 - The app shows a list of flights
