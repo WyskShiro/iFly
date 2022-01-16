@@ -4,89 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/margin_8">
+    android:layout_marginTop="@dimen/margin_8"
+    android:paddingBottom="@dimen/padding_8">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/padding_16">
+        android:paddingTop="@dimen/padding_8">
 
-        <ImageView
-            android:id="@+id/airline_image"
-            android:layout_width="@dimen/airline_logo_size"
-            android:layout_height="@dimen/airline_logo_size"
-            android:layout_marginStart="@dimen/margin_16"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/legs_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/departure_arrival_time_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_16"
-            app:layout_constraintStart_toEndOf="@id/airline_image"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="15:00 - 17:00" />
-
-        <TextView
-            android:id="@+id/departure_arrival_name_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/departure_arrival_time_text"
-            app:layout_constraintTop_toBottomOf="@id/departure_arrival_time_text"
-            tools:text="DUB-LGW, " />
-
-        <TextView
-            android:id="@+id/company_name_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@id/departure_arrival_name_text"
-            app:layout_constraintStart_toEndOf="@id/departure_arrival_name_text"
-            app:layout_constraintTop_toTopOf="@id/departure_arrival_name_text"
-            tools:text="Wizz Air" />
-
-        <TextView
-            android:id="@+id/stops_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_16"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Direct" />
-
-        <TextView
-            android:id="@+id/duration_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_16"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/stops_text"
-            tools:text="2h 25m" />
 
         <View
             android:id="@+id/divider"
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginTop="@dimen/margin_16"
-            android:background="#717171"
+            android:background="#C9C9C9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/duration_text" />
+            app:layout_constraintTop_toBottomOf="@id/legs_recycler" />
 
         <TextView
             android:id="@+id/price_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
             android:layout_marginEnd="@dimen/margin_16"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider"
             tools:text="£115" />
 
         <TextView
             android:id="@+id/agent_url_text"
+            style="@style/TextSecondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_16"
+            android:layout_marginBottom="@dimen/margin_8"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/price_text"
             tools:text="via Wizzair.com" />

@@ -17,27 +17,23 @@ class ItinerariesViewModel constructor(
 
     private val disposables = CompositeDisposable()
     private val _itineraries = MutableLiveData<List<Itinerary>>()
-    private val _showLoading = MutableLiveData<Boolean>()
 
     val itineraries: LiveData<List<Itinerary>> = _itineraries
-    val showLoading: LiveData<Boolean> = _showLoading
 
     fun getItineraries() {
-        _showLoading.postValue(true)
         getItinerariesUseCase.execute()
             .subscribeOn(schedulers.io())
             .observeOn(schedulers.ui())
             .subscribe(::onGetItinerariesSuccess, ::onGetItinerariesError)
+            .addTo(disposables)
     }
 
     private fun onGetItinerariesSuccess(itineraries: List<Itinerary>) {
         _itineraries.postValue(itineraries)
-        _showLoading.postValue(false)
     }
 
     private fun onGetItinerariesError(throwable: Throwable) {
         Log.d(LOG, throwable.toString())
-        _showLoading.postValue(false)
     }
 
     override fun onCleared() {

@@ -47,7 +47,6 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$versions.constraintLayout"
     implementation "androidx.fragment:fragment-ktx:$versions.appcompat"
     testImplementation "androidx.arch.core:core-testing:$versions.androidx"
-    debugImplementation "androidx.fragment:fragment-testing:$versions.fragmentTest"
     androidTestImplementation "androidx.test:rules:$versions.testx"
     androidTestImplementation "androidx.test:runner:$versions.testx"
     androidTestImplementation "androidx.test:core:$versions.testxCore"
@@ -78,13 +77,6 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid"
     implementation "io.reactivex.rxjava2:rxjava:$versions.rxJava"
 
-    // Maps
-    implementation "com.google.android.gms:play-services-maps:$versions.gMaps"
-    implementation "com.google.maps.android:android-maps-utils:$versions.mapUtils"
-
-    // Lottie
-    implementation "com.airbnb.android:lottie:$versions.lottie"
-
     // Glide
     implementation "com.github.bumptech.glide:glide:$versions.glide"
     annotationProcessor "com.github.bumptech.glide:compiler:$versions.glide"
@@ -92,13 +84,4 @@ dependencies {
     // Mockk
     testImplementation "io.mockk:mockk:$versions.mockk"
     androidTestImplementation "io.mockk:mockk-android:$versions.mockk"
-
-    // Espresso
-    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espresso"
-    androidTestImplementation "androidx.test.espresso:espresso-contrib:$versions.espressoCompat"
-    androidTestImplementation "androidx.test.espresso:espresso-intents:$versions.espresso"
-
-    // MockWebServer
-    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$versions.mockwebserver"
-    androidTestImplementation "com.jakewharton.espresso:okhttp3-idling-resource:$versions.okhttpIdlingResource"
 }

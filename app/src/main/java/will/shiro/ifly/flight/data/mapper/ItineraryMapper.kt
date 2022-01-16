@@ -6,6 +6,8 @@ import will.shiro.ifly.flight.domain.entity.Itinerary
 import will.shiro.ifly.flight.domain.entity.Leg
 import will.shiro.ifly.utils.extensions.minsToHour
 
+private const val TIME_SIZE = 5
+
 class ItineraryMapper {
 
     fun toDomain(apiItinerary: ApiItinerary, apiLegs: List<ApiLeg>): Itinerary? {
@@ -15,8 +17,8 @@ class ItineraryMapper {
             Leg(
                 airlineId = it.airlineId ?: "",
                 airlineName = it.airlineName!!,
-                departureTime = it.departureTime!!.takeLast(5),
-                arrivalTime = it.arrivalTime!!.takeLast(5),
+                departureTime = it.departureTime!!.takeLast(TIME_SIZE),
+                arrivalTime = it.arrivalTime!!.takeLast(TIME_SIZE),
                 departureAirport = it.departureAirport!!,
                 arrivalAirport = it.arrivalAirport!!,
                 stops = it.stops!!,
