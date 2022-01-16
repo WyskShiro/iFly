@@ -5,6 +5,7 @@ import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import will.shiro.ifly.BuildConfig
 import will.shiro.ifly.flight.data.mapper.ItineraryMapper
+import will.shiro.ifly.flight.data.mapper.LegMapper
 import will.shiro.ifly.flight.data.repository.FlightRepositoryImpl
 import will.shiro.ifly.flight.data.service.FlightApiService
 import will.shiro.ifly.flight.domain.repository.FlightRepository
@@ -19,7 +20,8 @@ object FlightModule {
     fun module() = module {
         // Data
         factory<FlightRepository> { FlightRepositoryImpl(get(), get()) }
-        factory { ItineraryMapper() }
+        factory { ItineraryMapper(get()) }
+        factory { LegMapper() }
         factory<FlightApiService> {
             providesRetrofit(
                 get(qualifier = named(API_URL)),
