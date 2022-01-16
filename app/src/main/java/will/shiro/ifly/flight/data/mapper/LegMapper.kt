@@ -19,7 +19,7 @@ class LegMapper {
             departureAirport = departureAirport!!,
             arrivalAirport = arrivalAirport!!,
             stops = stops!!,
-            duration = durationMins!!.minsToHour(),
+            duration = durationMins!!.minsToHour()
         )
     }
 }
