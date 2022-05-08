@@ -16,7 +16,7 @@ class LegViewHolder constructor(
             .into(airlineImage)
 
         departureArrivalTimeText.text = "${leg.departureTime} - ${leg.arrivalTime}"
-        departureArrivalNameText.text = "${leg.departureAirport} - ${leg.arrivalAirport}, "
+        departureArrivalNameText.text = "${leg.departureAirport}-${leg.arrivalAirport}, "
         companyNameText.text = leg.airlineName
 
         stopsText.text = if (leg.stops == 0) {
