@@ -20,6 +20,16 @@ class ItinerariesViewModel constructor(
 
     val itineraries: LiveData<List<Itinerary>> = _itineraries
 
+    var customState: String? = null
+
+    fun call() {
+        Log.d("WILLIAM", "ViewModel called from MyObserver")
+    }
+
+    fun saveState() {
+        customState = "Saved state"
+    }
+
     fun getItineraries() {
         getItinerariesUseCase.execute()
             .subscribeOn(schedulers.io())

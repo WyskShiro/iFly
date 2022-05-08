@@ -10,6 +10,7 @@ import will.shiro.ifly.flight.data.repository.FlightRepositoryImpl
 import will.shiro.ifly.flight.data.service.FlightApiService
 import will.shiro.ifly.flight.domain.repository.FlightRepository
 import will.shiro.ifly.flight.domain.usecase.GetItinerariesUseCase
+import will.shiro.ifly.flight.presentation.ui.MyObserver
 import will.shiro.ifly.flight.presentation.viewmodel.ItinerariesViewModel
 import will.shiro.ifly.utils.network.NetworkService.providesRetrofit
 
@@ -35,5 +36,6 @@ object FlightModule {
 
         // Presentation
         viewModel { ItinerariesViewModel(get(), get()) }
+        single { MyObserver(get()) }
     }
 }

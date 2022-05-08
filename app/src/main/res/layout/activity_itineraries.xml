@@ -4,7 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F2F6">
+    android:background="#F5F2F6"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/open_result"
+        android:text="Open Result Activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/itineraries_recycler"
