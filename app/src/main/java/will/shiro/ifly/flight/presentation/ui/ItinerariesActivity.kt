@@ -32,6 +32,7 @@ class ItinerariesActivity : AppCompatActivity() {
         setUpObservers()
         setUpActivityResults()
         loadData()
+
         Log.d("WILLIAM", "ItinerariesActivity: onCreate")
         Log.d("WILLIAM", "ItinerariesActivity: savedState: ${viewModel.customState}")
     }
